@@ -1,0 +1,51 @@
+@import "../../../scss/variable";
+
+.item {
+  border: 2px;
+  border-color: $border;
+  border-style: solid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  gap: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.item__header {
+  display: flex;
+  justify-content: space-between;
+}
+.item__title {
+  font-size: 1.4rem;
+  color: $title;
+  font-weight: 600;
+}
+.item__config {
+  display: flex;
+  font-size: 18px;
+  gap: 12px;
+}
+
+.item__gear {
+  &:hover {
+    color: #ffb703;
+  }
+}
+
+.item__trash {
+  &:hover {
+    color: #e63946;
+  }
+}
+
+.item__author {
+  font-size: 1.15rem;
+  color: $title;
+  font-weight: 600;
+}
+
+.item__date {
+  color: $textDetail;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,5 @@
+@mixin mediaMin($media: 480px) {
+  @media screen and (min-width: $media) {
+    @content;
+  }
+}
