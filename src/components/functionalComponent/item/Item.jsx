@@ -1,3 +1,4 @@
+import { stringToDateISO } from "../../../utils/stringToDateIso";
 import styles from "./Item.module.scss";
 import { BsFillGearFill, BsFillTrashFill } from "react-icons/bs";
 
@@ -28,8 +29,8 @@ export const Item = ({
       </div>
       <p>{content}</p>
       <div className={styles.item__date}>
-        <p>Create at: {createdAt}</p>
-        <p>Update up: {updatedAt}</p>
+        <p>Create at: {stringToDateISO(createdAt)}</p>
+        <p>Update up: {stringToDateISO(updatedAt)}</p>
       </div>
     </li>
   );

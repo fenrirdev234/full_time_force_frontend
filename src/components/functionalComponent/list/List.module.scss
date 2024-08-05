@@ -1,0 +1,17 @@
+@import "../../../scss/variable";
+
+.list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding-top: 24px;
+}
+.list_section {
+  padding-top: 20px;
+}
+
+.title {
+  color: $title;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
