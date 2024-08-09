@@ -5,28 +5,33 @@ export const authSlice = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_ENDPOINT }),
   endpoints: (builder) => ({
-    //login
-    loginApp: builder.query({
-      query: () => ({
-        url: API_ENDPOINTS.GOOGLE_LOGIN,
-        method: "GET",
-      }),
-    }),
     //login check
     isLogin: builder.query({
       query: () => ({
         url: API_ENDPOINTS.LOGIN_CHECK,
         method: "GET",
+        providesTags: ["Logs"],
       }),
     }),
+    //login check
+    loginChecker: builder.mutation({
+      query: () => ({
+        url: API_ENDPOINTS.LOGIN_CHECK,
+        method: "GET",
+        invalidatesTags: ["Logs"],
+      }),
+    }),
+
     //logout
-    logout: builder.query({
+    logout: builder.mutation({
       query: () => ({
         url: API_ENDPOINTS.LOGOUT,
-        method: "GET",
+        method: "POST",
+        invalidatesTags: ["Logs"],
       }),
     }),
   }),
 });
 
-export const { useLoginAppQuery, useIsLoginQuery, useLogoutQuery } = authSlice;
+export const { useIsLoginQuery, useLogoutMutation, useLoginCheckerMutation } =
+  authSlice;
